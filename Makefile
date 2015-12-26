@@ -1,7 +1,7 @@
 TARG=blink
 
 CXX=avr-g++
-AVR_COPY=avr-objcopy
+OBJCOPY=avr-objcopy
 
 .PHONY: all deploy
 
@@ -14,7 +14,7 @@ clean:
 	rm -fr $(TARG) $(TARG).hex $(TARG).o
 
 $(TARG).hex: $(TARG)
-	$(AVR_COPY) -O ihex -R .eeprom $^ $@
+	$(OBJCOPY) -O ihex -R .eeprom $^ $@
 
 $(TARG): $(TARG).o
 	$(CXX) -mmcu=atmega328p $^ -o $@
