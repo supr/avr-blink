@@ -20,4 +20,4 @@ $(TARG): $(TARG).o
 	$(CXX) -mmcu=atmega328p $^ -o $@
 
 %.o: %.cc
-	$(CXX) -Os -DF_CPU=16000000UL -mmcu=atmega328p -c -o $@ $^
+	$(CXX) -Os -DF_CPU=12000000UL -mmcu=atmega328p -c -o $@ $^
